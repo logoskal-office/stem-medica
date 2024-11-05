@@ -1,0 +1,10 @@
+{% load crispy_forms_tags %}
+	<section class="section box">
+		<form method="POST">
+			{% csrf_token %}
+			<legend class="title has-text-centered">LOGIN</legend>
+			{{ form | crispy }}
+			<div class="column has-text-centered"><button class="button is-size-4">LOGIN</button></div>
+		</form>
+	</section>
+</html>
