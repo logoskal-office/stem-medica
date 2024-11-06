@@ -1,0 +1,39 @@
+{% extends "home/base.html" %} {% load crispy_forms_tags %} {% load crispy_forms_tags %} {% block content%}
+
+<!--- Contact Us Page Content --->
+<div class="container mt-5">
+	<p class="text display-3 text-center">Welcome</p>
+</div>
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Contact Us</h2>
+			<form>
+				<div class="mb-3">
+					<label for="name" class="form-label">Name</label>
+					<input type="text" class="form-control" id="name" placeholder="Your Name" />
+				</div>
+				<div class="mb-3">
+					<label for="email" class="form-label">Email address</label>
+					<input type="email" class="form-control" id="email" placeholder="Your Email" />
+				</div>
+				<div class="mb-3">
+					<label for="message" class="form-label">Message</label>
+					<textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Send Message</button>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<h3>Follow Us</h3>
+			<div class="d-flex">
+				<a href="https://facebook.com" class="btn btn-outline-primary me-2" target="_blank"> <i class="bi bi-facebook"></i> Facebook </a>
+				<a href="https://twitter.com" class="btn btn-outline-info me-2" target="_blank"> <i class="bi bi-twitter"></i> Twitter </a>
+				<a href="https://instagram.com" class="btn btn-outline-danger me-2" target="_blank"> <i class="bi bi-instagram"></i> Instagram </a>
+				<a href="https://linkedin.com" class="btn btn-outline-primary" target="_blank"> <i class="bi bi-linkedin"></i> LinkedIn </a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{%endblock content%}
