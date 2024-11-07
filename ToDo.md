@@ -9,13 +9,14 @@
 
 ## Info Page
 
--   [ ] -> Create an about us page
--   [ ] -> Create a contact us page
+-   [ ] -> Clean the about us page
+-   [ ] -> Clean the contact us page
 -   [ ] -> Check how to make download pages with django and create a download page
 
 ## Order
 
 -   [ ] -> Create A If you want a site like this, contacts us page
+-   [ ] -> Clean the navbar and header
 
 # <span style="color: yellow; font-size: 3rem">CLEANUP</span>
 

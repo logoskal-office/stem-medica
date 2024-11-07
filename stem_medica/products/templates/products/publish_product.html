@@ -1,0 +1,15 @@
+{% extends "home/base.html" %} {% load crispy_forms_tags %} {% load crispy_forms_tags %} {% block content%}
+<section class="container mt-5 d-flex">
+	<div class="card w-50">
+		<div class="card-body">
+			<form method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<legend class="text-success display-3 text-center">PUBLISH</legend>
+				<div class="justify-content-center">{{ form | crispy }}</div>
+				<div class="justify-content-center">{{ images }}</div>
+				<div class="text-center"><button class="btn btn-outline-success rounded-pill btn-lg">PUBLISH</button></div>
+			</form>
+		</div>
+	</div>
+</section>
+{% endblock %}

@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'products.apps.ProductsConfig',
-    'unfold',
     'crispy_forms',
     'crispy_bootstrap5',
     'django.contrib.admin',
