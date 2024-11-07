@@ -3,9 +3,9 @@
 	<legend class="text-success display-3 text-center">PRODUCTS</legend>
 	<div class="row">
 		{% for result in results %}
-		<div class="col-md-3 col-sm-6 mb-4">
+		<div class="col-md-3 col-sm-6 mb-4 h-25">
 			<div class="card border-0 text-center">
-				<img src="{{result.images.first.url}}" class="card-img-top" alt="product image" />
+				<img src="{{result.images.first.image.url}}" class="card-img-top img-fluid" alt="product image" style="min-height: 15rem; max-height: 20rem; max-width: 275px" />
 				<div class="card-body">
 					<h6 class="card-title font-weight-bold">{{result.name}} ({{result.brand}}-{{result.model}})</h6>
 					<p class="card-text text-muted">{{result.name}}</p>
