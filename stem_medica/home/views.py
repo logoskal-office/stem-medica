@@ -10,10 +10,10 @@ def contact_us(request, ):
 def about_us(request):
     return render(request, 'home/about-us.html')
 
-def download(request, file_name):
-    if not file_name:
-        return render(request, 'download.html')
+def download(request):
+        return render(request, 'home/download.html')
 
+def download_link(request, file_name):
     file_path = os.path.join(settings.MEDIA_ROOT, 'files/'+ file_name)
     
     if not os.path.exists(file_path):

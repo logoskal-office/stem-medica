@@ -4,7 +4,7 @@
 -   [ ] -> Create the homepages with the latest and recommended links
 -   [ ] -> Create the indiviual product pages
 -   [ ] -> Create A Search page and view
--   [ ] -> Plan and write the models
+-   [x] -> Plan and write the models
 
 # <span style="color: green; font-size: 3rem">IMPORTANT</span>
 
@@ -12,9 +12,10 @@
 -   [ ] -> Clean the contact us page
 -   [ ] -> Clean the publish page
 -   [ ] -> Make the footer stick to the ground & clean it
--   [ ] -> Check how to make download pages with django and create a download page
+-   [x] -> Check how to make download pages with django and create a download page
 -   [ ] -> Create A If you want a site like this, contacts us page
 -   [ ] -> Clean the navbar and header
+-   [ ] -> Style The Download Page
 
 # <span style="color: yellow; font-size: 3rem">CLEANUP</span>
 
