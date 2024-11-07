@@ -57,13 +57,14 @@
 
 			<div class="d-flex flex-grow-1 mx-3 justify-content-center">
 				<!-- Input Group for search -->
-				<div class="input-group w-75">
-					<input type="text" class="form-control rounded-pill" placeholder="Search" aria-label="Search" />
-					<button class="btn border-0 btn-white rounded-circle" type="button">
+
+				<form method="GET" action="{% url 'products-page'%}" class="input-group w-75">
+					<input type="text" name="q" class="form-control rounded-pill" placeholder="Search" aria-label="Search" />
+					<button class="btn border-0 btn-white rounded-circle" type="submit">
 						<i class="bi bi-search"></i>
 						<!-- Bootstrap icon for search -->
 					</button>
-				</div>
+				</form>
 			</div>
 		</header>
 
