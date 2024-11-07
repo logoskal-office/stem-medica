@@ -18,5 +18,5 @@ class Category(models.Model):
     image = models.ImageField()
 
 class Image(models.Model):
-    product = models.ForeignKey(to='Product', on_delete=models.CASCADE)
+    product = models.ForeignKey(to='Product', related_name='images' ,on_delete=models.CASCADE)
     image = models.ImageField(upload_to='product images/')

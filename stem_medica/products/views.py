@@ -20,14 +20,17 @@ def publish_product(request):
     else:
         return render(request, 'products/publish_product.html', {'form': ProductForm, 'images': ImageForm()})
 
-def search(request, query=''):
-    if query == '':
-        return HttpResponse('Welcome, Search')
+def products_view(request):
+    query = request.GET.get('q', '')
     products = Product.objects.all()
-    results = []
-    query = query.lower().strip()
-    for product in products:
-        if (product.status) or ((query in product.name) or (query in product.model) or (query in product.brand) or (query in product.description)):
-            results.append(product)
-            print(results)
-    return HttpResponse('Found: ', results)
+    results = list(products)
+    results.reverse()
+    query = query.lower().strip(' /$\\=')   
+    if query == '':
+        pass
+    else:
+        results = []
+        for product in products:
+            if (product.status) and ((query in str(product.name).lower())) or (query in str(product.model).lower()) or (query in str(product.brand).lower()) or (query in str(product.description).lower()):
+                results.append(product)
+    return render(request, 'products/products.html', {'results': results})
