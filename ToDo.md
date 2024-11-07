@@ -10,15 +10,15 @@
 
 # <span style="color: green; font-size: 3rem">IMPORTANT</span>
 
--   [ ] -> Clean the about us page
--   [ ] -> Clean the contact us page
--   [ ] -> Clean the publish page
+-   [ ] -> Clean the about us page - \*
+-   [ ] -> Clean the contact us page - \*
+-   [ ] -> Clean the publish page - \*
 -   [x] -> Make the footer stick to the ground & clean it
 -   [x] -> Make the distance between the footer and sections smaller
 -   [x] -> Check how to make download pages with django and create a download page
 -   [ ] -> Create A If you want a site like this, contacts us page
 -   [ ] -> Clean the navbar and header and add links
--   [ ] -> Style The Download Page
+-   [ ] -> Style The Download Page - \*
 
 # <span style="color: yellow; font-size: 3rem">CLEANUP</span>
 
