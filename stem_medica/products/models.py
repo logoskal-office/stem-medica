@@ -7,7 +7,7 @@ class Product(models.Model):
     brand = models.CharField(max_length=20, blank=True, null=True)
     description = models.CharField(max_length=1000)
     price = models.IntegerField(blank=True, null=True)
-    category = models.ForeignKey(blank=True, null=True, to='Category', on_delete=models.DO_NOTHING)
+    category = models.ForeignKey(related_name='products',blank=True, null=True, to='Category', on_delete=models.DO_NOTHING)
     quantity = models.IntegerField(blank=True, null=True)
     weight = models.FloatField(blank=True, null=True)
     status = models.BooleanField(blank=True, null=True)

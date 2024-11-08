@@ -21,6 +21,7 @@
 -   [ ] -> Clean the navbar and header and add links and fix the logout button
 -   [ ] -> Style The Download Page - \*
 -   [ ] -> Add Image Compression
+-   [ ] -> Style The Carousels Properly -\*
 
 # <span style="color: yellow; font-size: 3rem">CLEANUP</span>
 

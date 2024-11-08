@@ -1,0 +1,17 @@
+{% extends 'home/home.html' %} {% block pageoption %}
+<div class="container text-center mt-3">
+	<a class="btn btn-success mx-2 w-25">IN-DEMAND</a>
+	<button class="btn btn-outline-success mx-2 w-25">LATEST ARRIVALS</button>
+</div>
+<div class="container text-center my-5">
+	<div class="row">
+		{% for product in products %}
+		<!-- Section Card -->
+		<div class="col-md-2 col-6 mb-4">
+			<img src="{{product.images.first.image.url}}" class="img-fluid" alt="product image" />
+			<p class="mt-2">{{product.brand}} {{product.model}}</p>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

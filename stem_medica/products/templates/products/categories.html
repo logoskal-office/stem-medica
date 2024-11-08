@@ -1,0 +1,18 @@
+{% extends "home/base.html" %} {% load crispy_forms_tags %} {% load crispy_forms_tags %} {% block content%}
+<section class="container mt-5">
+	<legend class="text-success display-3 text-center">CATEGORIES</legend>
+	<div class="row">
+		{% for result in results %}
+		<div class="col-md-3 col-sm-6 mb-4 w-50">
+			<a class="card border-0 text-center" href="{% url 'categories-page' %}{{ result.id }}">
+				<img src="{{result.image.url}}" class="card-img-top img-fluid" alt="product image" />
+				<div class="card-body">
+					<h6 class="card-title font-weight-bold">{{result.name}}</h6>
+					<p class="card-text text-muted">{{result.description}}</p>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+{% endblock %}

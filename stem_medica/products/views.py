@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from .forms import ProductForm, ImageForm, CategoryForm
 from .models import Image, Product, Category
 from django.contrib import messages
@@ -34,6 +34,15 @@ def products_view(request):
             if (product.status) and ((query in str(product.name).lower())) or (query in str(product.model).lower()) or (query in str(product.brand).lower()) or (query in str(product.description).lower()):
                 results.append(product)
     return render(request, 'products/products.html', {'results': results})
+
+def category_view(request, pk=''):
+    query = pk.lower().strip(' /$\\=')   
+    if query == '':
+        return render(request, 'products/categories.html', {'results': Category.objects.all()})
+    else:
+        category = get_object_or_404(Category, pk=query)
+        return render(request, 'products/category.html', {'category': category})
+
 
 def publish_category(request):
     if request.method == 'POST':
