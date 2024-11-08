@@ -1,0 +1,1 @@
+The categories in the products are hard coded because it was difficult to call the Category instances inside the base file.

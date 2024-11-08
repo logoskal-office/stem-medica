@@ -26,32 +26,37 @@
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav ms-auto">
 							<li class="nav-item me-5">
-								<a class="nav-link underline-hover change-color" href="#">Home</a>
+								<a class="nav-link underline-hover change-color" href="{% url 'home-page'%}">Home</a>
 							</li>
-							<li class="nav-item me-5 dropdown-toggle">
-								<a class="nav-link underline-hover change-color" href="#">Products</a>
-							</li>
-							<li class="nav-item me-5">
-								<a class="nav-link underline-hover change-color" href="#">Download</a>
-							</li>
-							<li class="nav-item me-5">
-								<a class="nav-link underline-hover change-color" href="#">Reviews</a>
-							</li>
-							<li class="nav-item me-5">
-								<a class="nav-link underline-hover change-color" href="#">About Us</a>
+							<li class="nav-item me-5 dropdown">
+								<a class="nav-link underline-hover change-color" href="{% url 'products-page'%}">Products</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+									<li><a class="dropdown-item underline-hover change-color" href="{% url 'category-page' '1'%}">Laboratory Equipment</a></li>
+									<li><a class="dropdown-item underline-hover change-color" href="{% url 'category-page' '2'%}">Operation Equipment</a></li>
+									<li><a class="dropdown-item underline-hover change-color" href="{% url 'category-page' '3'%}">X-Ray Machines</a></li>
+									<li><a class="dropdown-item underline-hover change-color" href="{% url 'category-page' '4'%}">Endoscope Equipment</a></li>
+								</ul>
 							</li>
 							<li class="nav-item me-5">
-								<a class="nav-link underline-hover change-color" href="#">Contact Us</a>
+								<a class="nav-link underline-hover change-color" href="{% url 'download-page'%}">Download</a>
+							</li>
+							<li class="nav-item me-5">
+								<a class="nav-link underline-hover change-color" href="{% url 'categories-page'%}">Categories</a>
+							</li>
+							<li class="nav-item me-5">
+								<a class="nav-link underline-hover change-color" href="{% url 'about-us-page'%}">About Us</a>
+							</li>
+							<li class="nav-item me-5">
+								<a class="nav-link underline-hover change-color" href="{% url 'contact-us-page'%}">Contact Us</a>
 							</li>
 						</ul>
 						<a href="https://wa.me/11234567890" target="_blank" class="btn btn-outline-success btn-sm d-flex align-items-center rounded-pill"> <i class="bi bi-whatsapp fs-4 me-2"></i> +251911111111 </a>
 					</div>
 				</div>
 				{% if user.is_authenticated %}
-				<div>
-					<!-- Outlined pill button inside a div -->
-					<button class="btn btn-outline-primary rounded-pill px-4 py-2">Logout</button>
-				</div>
+				<!-- Outlined pill button inside a div -->
+				<a class="btn btn-sm btn-outline-danger rounded" href="{% url 'logout-page' %}">Logout</a>
+
 				{% endif %}
 			</nav>
 
@@ -82,10 +87,10 @@
 							<h5 class="text-success">About Us</h5>
 							<ul class="list-unstyled">
 								<li>
-									<a href="about.html" class="text-light text-decoration-none">About Us</a>
+									<a href="{% url 'about-us-page'%}" class="text-light text-decoration-none">About Us</a>
 								</li>
 								<li>
-									<a href="https://getbootstrap.com/" class="text-light text-decoration-none">Company Honor</a>
+									<a href="{% url 'download-page'%}" class="text-light text-decoration-none">Brochure and Trade Certification</a>
 								</li>
 							</ul>
 						</div>
@@ -93,7 +98,7 @@
 						<div class="col-md-6">
 							<h5 class="text-success">Contact Us</h5>
 							<ul class="list-unstyled">
-								<li><i class="bi bi-geo-alt-fill"></i> 2nd Floor, Building C, Wanlima Industrial Park,<br />No.188, Xinye Road, Haizhu District,<br />Guangzhou, 510000, PRC</li>
+								<li><i class="bi bi-geo-alt-fill"></i> 2nd Floor, Building C, Wanlima Industrial Park,<br />No.188, Africa Road, Addis Ababa,<br />AA, 510000, PRC</li>
 							</ul>
 						</div>
 					</div>
@@ -107,7 +112,7 @@
 							<a href="https://www.instagram.com/"><i class="bi bi-youtube text-light mx-2"></i></a>
 						</div>
 					</div>
-					<p class="text-center">Guangzhou Yueshen Medical Equipment Co., Ltd. © All Rights Reserved</p>
+					<p class="text-center">Stem Medica Medical Equipment Co., Ltd. © All Rights Reserved</p>
 				</div>
 			</footer>
 		</div>
@@ -209,6 +214,26 @@
 			}
 			.change-color:hover {
 				color: green;
+			}
+			.nav-item.dropdown:hover .dropdown-menu {
+				display: block;
+				visibility: visible;
+			}
+
+			/* Ensure the dropdown menu is hidden by default */
+			.dropdown-menu {
+				display: none;
+				visibility: hidden;
+				position: absolute;
+				z-index: 1000; /* Optional: Adjust if menu appears behind other elements */
+			}
+
+			/* Optional: Add styling for the dropdown list */
+			.dropdown-menu {
+				min-width: 160px;
+				background-color: #fff;
+				border: 1px solid #ddd;
+				border-radius: 0.25rem;
 			}
 		</style>
 	</body>

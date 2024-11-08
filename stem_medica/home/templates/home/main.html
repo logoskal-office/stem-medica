@@ -1,7 +1,7 @@
 {% extends 'home/home.html' %} {% block pageoption %}
 <div class="container text-center mt-3">
 	<a class="btn btn-success mx-2 w-25">IN-DEMAND</a>
-	<button class="btn btn-outline-success mx-2 w-25">LATEST ARRIVALS</button>
+	<a class="btn btn-outline-success mx-2 w-25" href="{% url 'home-latest-page'%}">LATEST ARRIVALS</a>
 </div>
 <div class="container text-center my-5">
 	<div class="row">

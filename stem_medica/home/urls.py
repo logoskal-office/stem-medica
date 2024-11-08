@@ -8,6 +8,6 @@ urlpatterns = [
     path('home/latest', latest_section, name='home-latest-page'),
     path('contact-us/', contact_us, name='contact-us-page'),
     path('about-us/', about_us, name='about-us-page'),
-    path('download/', download, name='download'),
-    path('download/<str:file_name>', download_link, name='download_link')
+    path('download/', download, name='download-page'),
+    path('download/<str:file_name>', download_link, name='download-link')
 ]
