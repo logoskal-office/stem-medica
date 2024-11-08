@@ -15,7 +15,7 @@ class Product(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images/category/thumbnails/')
 
 class Image(models.Model):
     product = models.ForeignKey(to='Product', related_name='images' ,on_delete=models.CASCADE)

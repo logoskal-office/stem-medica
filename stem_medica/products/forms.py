@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Image
+from .models import Product, Image, Category
 from multiupload.fields import MultiFileField
 
 class ProductForm(forms.ModelForm):
@@ -10,6 +10,10 @@ class ProductForm(forms.ModelForm):
 class ImageForm(forms.Form):
     image = MultiFileField(min_num=1, max_num=5, max_file_size= 1024 * 1024 * 5)
 
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = '__all__'
 
     # name = forms.CharField(max_length=50)
     # model = forms.CharField(max_length=20, blank=True)

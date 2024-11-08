@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .forms import ProductForm, ImageForm
+from .forms import ProductForm, ImageForm, CategoryForm
 from .models import Image, Product, Category
 from django.contrib import messages
 
@@ -34,3 +34,17 @@ def products_view(request):
             if (product.status) and ((query in str(product.name).lower())) or (query in str(product.model).lower()) or (query in str(product.brand).lower()) or (query in str(product.description).lower()):
                 results.append(product)
     return render(request, 'products/products.html', {'results': results})
+
+def publish_category(request):
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, request.FILES)
+        print(request.POST)
+        print('\n CATEGORY FORM: \n')
+        print(form.errors)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Category Published', extra_tags='success')
+        return redirect('login-page')
+    
+    else:
+        return render(request, 'products/publish_category.html', {'form': CategoryForm})
